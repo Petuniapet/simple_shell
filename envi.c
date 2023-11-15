@@ -6,10 +6,9 @@
  *
  * Return: 1 on success, 0 otherwise
  */
-int env(char **args)
+int env(void)
 {
 	int index = 0;
-	(void)(**args);
 
 	while (environ[index])
 	{
@@ -17,5 +16,5 @@ int env(char **args)
 		write(STDOUT_FILENO, "\n", 1);
 		index++;
 	}
-	return (-1);
+	return (1);
 }
